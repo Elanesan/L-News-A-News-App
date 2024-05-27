@@ -5,23 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API CALL</title>
+    <title>L News</title>
     <link rel="stylesheet" href="{% static 'apicallstyle.css' %}">
 </head>
 <body>
-    <div>
-        <h1>API CALL</h1>
-        <div class="apicalling">
+    <div class="content">
+        <h1 class="name">L News</h1>
+        <h4 class="quotes">"L News stands for Latest News, bringing you real-time world news in all languages. It collects updates from every corner of the globe, ensuring you stay informed with the latest developments worldwide."</h4>
 
-        {% for meal in response.meals %}
-        <h2>{{ meal.strMeal }}</h2>
-        <p>{{ meal.strInstructions }}</p>
-        {% endfor %}
-        {% for meal in response.meals %}
-        <h2>{{ meal.strMeal }}</h2>
-        <p>{{ meal.strInstructions }}</p>
+        <p style="text-align: center; "><a style="color: rgb(151, 195, 206); font-size: larger; font-weight: 300;" href="https://elanesan.netlify.app/">Developed by Elanesan K</a></p><br><br>
+
+
+
+    {% for article in articles %}
+        <section class="news">
+            <div>
+                <h4>News Title : {{ article.title }}</h4>
+                
+            </div>
+            <div>
+                <p style="text-align: center;"><img src="{{ article.urlToImage }}" alt="IMAGE"></p><br>
+            </div>
+            <div>
+                <p class="explanation">News Explanation : {{ article.description }} <span> <a href="{{ article.url }}" target="_blank">Read more</a></span></p><br><br>
+            </div>
+            
+               
+            
+            <div>
+                <p class="author">by {{ article.author }}</p>
+            </div>
+        </section>
     {% endfor %}
-        </div>
     </div>
     
     
