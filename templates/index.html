@@ -17,7 +17,10 @@
         <h2>{{ meal.strMeal }}</h2>
         <p>{{ meal.strInstructions }}</p>
         {% endfor %}
-
+        {% for meal in response.meals %}
+        <h2>{{ meal.strMeal }}</h2>
+        <p>{{ meal.strInstructions }}</p>
+    {% endfor %}
         </div>
     </div>
     
